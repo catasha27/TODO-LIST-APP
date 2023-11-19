@@ -1,9 +1,12 @@
 import { Box } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 
 export default function Header() {
     return (
         <Box border='3px solid' borderColor='blue.600' rounded='md'>
-            Header
+            <Heading as='h1' size='4xl' noOfLines={1}>
+                To do List
+            </Heading>
         </Box>
     )
 }
