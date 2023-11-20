@@ -1,13 +1,19 @@
-import { Box } from '@chakra-ui/react'
 import IconBtn from "./IconBtn.jsx";
-
+import { ListItem } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
+import { ButtonGroup } from "@chakra-ui/react";
 
 export default function TodoTask() {
     return (
-        <Box border='3px solid' borderColor='pink.900' rounded='md'>
-            TodoTask
-            <IconBtn />
-            <IconBtn />
-        </Box>
-    )
+        <Flex>
+            <ListItem>Lorem ipsum dolor sit</ListItem>
+
+            <Spacer />
+
+            <ButtonGroup>
+                <IconBtn />
+                <IconBtn />
+            </ButtonGroup>
+        </Flex>
+    );
 }
