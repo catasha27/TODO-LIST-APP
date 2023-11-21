@@ -1,38 +1,18 @@
-// import { Box } from '@chakra-ui/react'
-import { FormControl, FormLabel, FormHelperText } from "@chakra-ui/react";
-import { Input } from "@chakra-ui/react";
-import { Select } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
-import { Flex, Spacer } from "@chakra-ui/react";
-import { Container } from '@chakra-ui/react'
+import { FormControl, FormLabel, Input, Flex, IconButton } from "@chakra-ui/react";
+import { AddIcon } from '@chakra-ui/icons'
+
 
 export default function () {
     return (
-        <FormControl>
-            <Container minW='80%' align="center" justify="center">
-                <Flex minH='15vh'>
-                    <Flex direction='column' width='45%'>
+        <FormControl w='80%' mx="auto">
+            <Flex alignItems='end' justifyContent="center">
+                    <Flex direction='column' width='45%' mr="5">
                         <FormLabel>Task</FormLabel>
-                        <Input type="text" border='2px' maxLength="50" />
-                        {/* <FormHelperText>Add a task to the list</FormHelperText> */}
+                        <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" />
                     </Flex>
 
-                    <Spacer />
-
-                    <Flex direction='column' width='45%'>
-                        <FormLabel>Select an option</FormLabel>
-                        <Select border='2px'>
-                            <option value="all">All</option>
-                            <option value="complete">Complete</option>
-                            <option value="incomplete">Incomplete</option>
-                        </Select>
-                    </Flex>
-                </Flex>
-
-                <Button type='submit' colorScheme="blackAlpha" variant="solid" width='35%' border='1px' borderColor='gray.500'>
-                    Add Task
-                </Button>
-            </Container>
+                <IconButton  aria-label='Add task' type='submit' icon={<AddIcon />} />
+            </Flex>
         </FormControl>
     );
 }
