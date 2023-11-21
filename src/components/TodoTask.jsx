@@ -11,8 +11,8 @@ export default function TodoTask() {
             <Spacer />
 
             <ButtonGroup>
-                <IconBtn />
-                <IconBtn />
+                <IconBtn isTrash={false} />
+                <IconBtn isTrash={true} />
             </ButtonGroup>
         </Flex>
     );
