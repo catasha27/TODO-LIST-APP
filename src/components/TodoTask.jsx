@@ -2,9 +2,9 @@ import IconBtn from "./IconBtn.jsx";
 import { ListItem, Spacer, ButtonGroup } from "@chakra-ui/react";
 
 
-export default function TodoTask() {
+export default function TodoTask({ task }) {
     return (
-        <ListItem>Lorem ipsum dolor sit
+        <ListItem>{task}
             <Spacer />
 
             <ButtonGroup>
