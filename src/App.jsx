@@ -10,8 +10,7 @@ function App() {
 
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
 
-  const onSubmit = (task, e) =>{
-    e.preventDefault()
+  const onSubmit = (task) =>{
     const newTask = [...(tasks || []), { task }]
     localStorage.setItem('tasks', JSON.stringify([...tasks, task]))
     setTasks(newTask)
