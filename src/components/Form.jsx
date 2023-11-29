@@ -7,6 +7,21 @@ export default function AddTask ({ onSubmit }) {
 
     const [task, setTask] = useState('');
 
+  //   const handleKeyPress = (e) => {
+  //   if (e.key === "Enter" && task.trim() !== "") {
+  //     e.preventDefault();
+  //     onSubmit(task);
+  //     setTask("");
+  //   }
+  // };
+
+  const handleClick = () => {
+    if (task.trim() !== "") {
+      onSubmit(task);
+      setTask("");
+    }
+  };
+
     return (
         <FormControl w='80%' mx="auto" >
             <Flex alignItems='end' justifyContent="center">
@@ -15,7 +30,7 @@ export default function AddTask ({ onSubmit }) {
                         <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={task} onChange={(e) => setTask(e.target.value)} />
                     </Flex>
 
-                <IconButton  aria-label='Add task' type='submit' icon={<AddIcon />} onClick={(e) => onSubmit(task, e)} />
+                <IconButton  aria-label='Add task' type='submit' icon={<AddIcon />} onClick={handleClick} />
             </Flex>
         </FormControl>
     );
