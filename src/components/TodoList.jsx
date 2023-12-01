@@ -1,11 +1,17 @@
 import TodoTask from "./TodoTask.jsx";
-import { UnorderedList, Flex, FormControl, FormLabel, Select, Spacer } from '@chakra-ui/react'
+import { 
+    UnorderedList, 
+    Flex, 
+    FormControl, 
+    FormLabel, 
+    Select, 
+    Spacer,
+    Text } from '@chakra-ui/react'
 
 export default function TodoList({ tasks }) {
-    console.log('Tareas en TodoList:', tasks);
 
     return (
-        <Flex direction="column" w="600px" mx="auto">
+        <Flex direction='column' w='100%' mx="auto">
 
             <FormControl>
                 <FormLabel>Select an option</FormLabel>
@@ -18,9 +24,15 @@ export default function TodoList({ tasks }) {
 
             <Spacer />
 
-            <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' p='10' borderStyle='dashed' my="4%">
-                {
-                    tasks.map((task, index) => <TodoTask key={index} task={task.task} />)
+            <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' marginInlineStart={0} p='10' borderStyle='dashed' my="4%">
+                {tasks.length ? tasks.map((task) => (
+                    <TodoTask 
+                        key={task.id} 
+                        id={task.id}
+                        description={task.description}
+                        completed={task.completed}
+                    />)
+                ) : <Text>NO TASKS TO RENDER</Text>
                 }
                 
             </UnorderedList>
