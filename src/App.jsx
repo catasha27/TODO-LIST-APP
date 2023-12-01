@@ -11,8 +11,8 @@ function App() {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
 
   const onSubmit = (task) =>{
-    const newTask = [...(tasks || []), { task }]
-    localStorage.setItem('tasks', JSON.stringify([...tasks, task]))
+    const newTask = [...tasks, task]
+    localStorage.setItem('tasks', JSON.stringify(newTask))
     setTasks(newTask)
   }
 

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function AddTask ({ onSubmit }) {
 
-    const [task, setTask] = useState('');
+    const [description, setDescription] = useState('');
 
   //   const handleKeyPress = (e) => {
   //   if (e.key === "Enter" && task.trim() !== "") {
@@ -16,10 +16,19 @@ export default function AddTask ({ onSubmit }) {
   // };
 
   const handleClick = () => {
-    if (task.trim() !== "") {
+    
+    if (description.trim() !== "") {
+      const task = {
+        id: crypto.randomUUID(),
+        description: description,
+        completed: false
+      }
+
       onSubmit(task);
-      setTask("");
+      setDescription("");
     }
+
+
   };
 
     return (
@@ -27,7 +36,7 @@ export default function AddTask ({ onSubmit }) {
             <Flex alignItems='end' justifyContent="center">
                     <Flex direction='column' width='45%' mr="5">
                         <FormLabel>Task</FormLabel>
-                        <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={task} onChange={(e) => setTask(e.target.value)} />
+                        <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </Flex>
 
                 <IconButton  aria-label='Add task' type='submit' icon={<AddIcon />} onClick={handleClick} />
