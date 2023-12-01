@@ -1,7 +1,9 @@
 import TodoTask from "./TodoTask.jsx";
 import { UnorderedList, Flex, FormControl, FormLabel, Select, Spacer } from '@chakra-ui/react'
 
-export default function TodoList() {
+export default function TodoList({ tasks }) {
+    console.log('Tareas en TodoList:', tasks);
+
     return (
         <Flex direction="column" w="600px" mx="auto">
 
@@ -17,7 +19,10 @@ export default function TodoList() {
             <Spacer />
 
             <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' p='10' borderStyle='dashed' my="4%">
-                <TodoTask />
+                {
+                    tasks.map((task, index) => <TodoTask key={index} task={task.task} />)
+                }
+                
             </UnorderedList>
         </Flex>
     )
