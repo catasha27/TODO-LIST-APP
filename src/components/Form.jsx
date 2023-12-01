@@ -3,20 +3,12 @@ import { AddIcon } from '@chakra-ui/icons'
 import { useState } from "react";
 
 
-export default function AddTask ({ onSubmit }) {
+export default function AddTask({ onSubmit }) {
 
-    const [description, setDescription] = useState('');
+  const [description, setDescription] = useState('');
 
-  //   const handleKeyPress = (e) => {
-  //   if (e.key === "Enter" && task.trim() !== "") {
-  //     e.preventDefault();
-  //     onSubmit(task);
-  //     setTask("");
-  //   }
-  // };
-
-  const handleClick = () => {
-    
+  const handleSubmit = (e) => {
+    e.preventDefault()
     if (description.trim() !== "") {
       const task = {
         id: crypto.randomUUID(),
@@ -31,16 +23,16 @@ export default function AddTask ({ onSubmit }) {
 
   };
 
-    return (
-        <FormControl w='80%' mx="auto" >
-            <Flex alignItems='end' justifyContent="center">
-                    <Flex direction='column' width='45%' mr="5">
-                        <FormLabel>Task</FormLabel>
-                        <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={description} onChange={(e) => setDescription(e.target.value)} />
-                    </Flex>
+  return (
+    <Flex as='form' w='100%' mx='auto' alignItems='end' onSubmit={handleSubmit} >
+      
+      <FormControl direction='column' w='100%' mr="5">
+        <FormLabel>Task</FormLabel>
+        <Input type="text" border='2px' w='100%' maxLength="50" placeholder="Add a task to the list" value={description} onChange={(e) => setDescription(e.target.value)} />
+      </FormControl>
 
-                <IconButton  aria-label='Add task' type='submit' icon={<AddIcon />} onClick={handleClick} />
-            </Flex>
-        </FormControl>
-    );
+      <IconButton aria-label='Add task' type='submit' icon={<AddIcon />} />
+
+    </Flex>
+  );
 }
