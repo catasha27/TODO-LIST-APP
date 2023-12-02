@@ -21,7 +21,7 @@ function App() {
     <Flex minH='100vh' direction='column' alignItems='center' bgGradient='linear(to-b, #1100B7, #040041)' color='white' pb="5">
       <Header />
       <VStack w='600px' >
-        <Form onSubmit={onSubmit} />
+        <Form onSubmit={onSubmit} tasks={tasks}/>
         <Spacer />
         <TodoList tasks={tasks} />
       </VStack>
