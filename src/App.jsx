@@ -16,6 +16,11 @@ function App() {
     setTasks(newTask)
   }
 
+  const deleteTask = (id) =>{
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  }
 
   return (
     <Flex minH='100vh' direction='column' alignItems='center' bgGradient='linear(to-b, #1100B7, #040041)' color='white' pb="5">
@@ -23,7 +28,7 @@ function App() {
       <VStack w='600px' >
         <Form onSubmit={onSubmit} tasks={tasks}/>
         <Spacer />
-        <TodoList tasks={tasks} />
+        <TodoList tasks={tasks} deleteTask={deleteTask} />
       </VStack>
       <Spacer />
       <Footer />
