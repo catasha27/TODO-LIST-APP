@@ -8,7 +8,7 @@ import {
     Spacer,
     Text } from '@chakra-ui/react'
 
-export default function TodoList({ tasks, deleteTask }) {
+export default function TodoList({ tasks, deleteTask, toggle }) {
 
     return (
         <Flex direction='column' w='100%' mx="auto">
@@ -32,6 +32,7 @@ export default function TodoList({ tasks, deleteTask }) {
                         description={task.description}
                         completed={task.completed}
                         deleteTask={deleteTask}
+                        toggle={toggle}
                     />)
                 ) : <Text>NO TASKS TO RENDER</Text>
                 }
