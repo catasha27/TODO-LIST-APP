@@ -22,13 +22,22 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   }
 
+  const toggle = (id) => {
+    const newArray = [...tasks]
+    const completedTask = newArray.find(task => task.id === id)
+    completedTask.completed = !completedTask.completed
+    setTasks(newArray)
+    localStorage.setItem('tasks', JSON.stringify(newArray))
+  };
+
+
   return (
     <Flex minH='100vh' direction='column' alignItems='center' bgGradient='linear(to-b, #1100B7, #040041)' color='white' pb="5">
       <Header />
       <VStack w='600px' >
         <Form onSubmit={onSubmit} tasks={tasks}/>
         <Spacer />
-        <TodoList tasks={tasks} deleteTask={deleteTask} />
+        <TodoList tasks={tasks} deleteTask={deleteTask} toggle={toggle} />
       </VStack>
       <Spacer />
       <Footer />
