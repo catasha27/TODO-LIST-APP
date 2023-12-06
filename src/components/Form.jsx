@@ -42,7 +42,8 @@ export default function AddTask({ onSubmit, tasks }) {
       <FormControl direction='column' w='100%' isRequired isInvalid={error}>
         <FormLabel>Task</FormLabel>
         <Flex justifyContent='space-between' gap='4' >
-          <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" 
+          value={description} onChange={(e) => setDescription(e.target.value)} />
           <IconButton aria-label='Add task' type='submit' icon={<AddIcon />} />
         </Flex>
         <FormErrorMessage>{error}</FormErrorMessage>

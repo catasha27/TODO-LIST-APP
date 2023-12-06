@@ -1,6 +1,7 @@
 import TodoTask from "./TodoTask.jsx";
 import { useState } from "react";
 import { 
+    Box,
     UnorderedList, 
     Flex, 
     FormControl, 
@@ -28,9 +29,9 @@ export default function TodoList({ tasks, deleteTask, toggle }) {
             <FormControl onChange={(e) => setFilterValue(e.target.value)}>
                 <FormLabel>Select an option</FormLabel>
                     <Select border='2px'>
-                        <option value="">All</option>
-                        <option value="complete">Completed</option>
-                        <option value="incomplete">Incompleted</option>
+                        <Box as='option' color='#3182CE' fontWeight='normal' value="">All</Box>
+                        <Box as='option' color='#3182CE' fontWeight='normal' value="complete">Completed</Box>
+                        <Box as='option' color='#3182CE' fontWeight='normal' value="incomplete">Incompleted</Box>
                     </Select>
             </FormControl>
 

@@ -4,8 +4,7 @@ import { ListItem, Spacer, ButtonGroup } from "@chakra-ui/react";
 
 export default function TodoTask({ description, id, completed, deleteTask, toggle }) {
     return (
-        <ListItem style={{ textDecoration: completed ? 'line-through' : 'none', color: completed ? 'gray' : 'white' }}>
-            {description}
+        <ListItem style={{ textDecoration: completed ? 'line-through' : 'none', color: completed ? 'gray' : 'white' }}>{description}
 
             <Spacer />
 
