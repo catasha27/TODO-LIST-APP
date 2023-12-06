@@ -37,7 +37,7 @@ export default function TodoList({ tasks, deleteTask, toggle }) {
 
             <Spacer />
 
-            <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' marginInlineStart={0} p='10' borderStyle='dashed' my="4%">
+            <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' marginInlineStart={0} p='10' borderStyle='dashed' my="4%" styleType='none'>
                 {filteredTasks.length ? filteredTasks.map((task) => (
                     <TodoTask 
                         key={task.id} 
