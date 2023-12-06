@@ -6,7 +6,8 @@ import { Box, ListItem, ListIcon, Text, Spacer, ButtonGroup } from "@chakra-ui/r
 export default function TodoTask({ description, id, completed, deleteTask, toggle }) {
     return (
         <Box as={ListItem} display='flex' alignItems='center' fontSize='lg' mb='10px'
-        style={{ textDecoration: completed ? 'line-through' : 'none', color: completed ? 'gray' : 'white' }}>
+        textDecoration={completed ? 'line-through' : 'none'} color={completed ? 'gray.500' : 'white'}>
+
             <ListIcon as={StarIcon} color={completed ? 'gray' : 'blue.600'} />
             {description}
 
@@ -16,6 +17,7 @@ export default function TodoTask({ description, id, completed, deleteTask, toggl
                 <IconBtn isTrash={false} onClick={() => toggle(id)} />
                 <IconBtn isTrash={true} onClick={() => deleteTask(id)} />
             </ButtonGroup>
+            
         </Box>
     );
 }
