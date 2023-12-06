@@ -1,4 +1,5 @@
 import TodoTask from "./TodoTask.jsx";
+import { useState } from "react";
 import { 
     UnorderedList, 
     Flex, 
@@ -10,10 +11,21 @@ import {
 
 export default function TodoList({ tasks, deleteTask, toggle }) {
 
+    const [filterValue, setFilterValue] = useState("")
+
+    let filteredTasks = tasks
+
+    if(filterValue==="complete") {
+        filteredTasks = tasks.filter((task) => task.completed)
+    } 
+    if(filterValue==="incomplete") {
+        filteredTasks = tasks.filter((task) => !task.completed)
+    } 
+
     return (
         <Flex direction='column' w='100%' mx="auto">
 
-            <FormControl>
+            <FormControl onChange={(e) => setFilterValue(e.target.value)}>
                 <FormLabel>Select an option</FormLabel>
                     <Select border='2px'>
                         <option value="">All</option>
@@ -25,7 +37,7 @@ export default function TodoList({ tasks, deleteTask, toggle }) {
             <Spacer />
 
             <UnorderedList border='3px solid' borderColor='teal.300' rounded='md' minH="30vh" boxShadow='2xl' marginInlineStart={0} p='10' borderStyle='dashed' my="4%">
-                {tasks.length ? tasks.map((task) => (
+                {filteredTasks.length ? filteredTasks.map((task) => (
                     <TodoTask 
                         key={task.id} 
                         id={task.id}
