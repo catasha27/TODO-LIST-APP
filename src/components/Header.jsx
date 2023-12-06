@@ -9,9 +9,9 @@ export default function Header() {
       <Heading as='h1'
         bgGradient='radial(teal 5%, teal.300, gray.300)'
         bgClip='text'
+        style={{WebkitTextStroke: '1px white'}}
         fontSize={{ base:'5xl', sm:'6xl', md:'7xl'}}
         fontWeight='bold'
-        // color='teal'
       >
         Todo List
       </Heading>
