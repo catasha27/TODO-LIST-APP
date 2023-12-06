@@ -40,7 +40,7 @@ export default function AddTask({ onSubmit, tasks }) {
     <Flex as='form' noValidate w='100%' mx='auto' alignItems='end' justifyContent='center' onSubmit={handleSubmit} >
 
       <FormControl direction='column' w='100%' isRequired isInvalid={error}>
-        <FormLabel>Task</FormLabel>
+        <FormLabel fontSize='lg'>Task</FormLabel>
         <Flex justifyContent='space-between' gap='4' >
           <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" 
           value={description} onChange={(e) => setDescription(e.target.value)} />

@@ -27,7 +27,7 @@ export default function TodoList({ tasks, deleteTask, toggle }) {
         <Flex direction='column' w='100%' mx="auto">
 
             <FormControl onChange={(e) => setFilterValue(e.target.value)}>
-                <FormLabel>Select an option</FormLabel>
+                <FormLabel fontSize='lg'>Select an option</FormLabel>
                     <Select border='2px'>
                         <Box as='option' color='#3182CE' fontWeight='normal' value="">All</Box>
                         <Box as='option' color='#3182CE' fontWeight='normal' value="complete">Completed</Box>
