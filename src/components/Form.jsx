@@ -1,5 +1,5 @@
-import { FormControl, FormLabel, FormErrorMessage, Input, Flex, IconButton } from "@chakra-ui/react";
-import { AddIcon } from '@chakra-ui/icons'
+import { FormControl, FormLabel, FormErrorMessage, Input, Flex, IconButton, Icon } from "@chakra-ui/react";
+import { AddIcon, WarningIcon } from '@chakra-ui/icons'
 import { useState } from "react";
 
 
@@ -40,12 +40,13 @@ export default function AddTask({ onSubmit, tasks }) {
     <Flex as='form' noValidate w='100%' mx='auto' alignItems='end' justifyContent='center' onSubmit={handleSubmit} >
 
       <FormControl direction='column' w='100%' isRequired isInvalid={error}>
-        <FormLabel>Task</FormLabel>
+        <FormLabel fontSize='lg'>Task</FormLabel>
         <Flex justifyContent='space-between' gap='4' >
-          <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <Input type="text" border='2px' maxLength="50" placeholder="Add a task to the list" 
+          value={description} onChange={(e) => setDescription(e.target.value)} />
           <IconButton aria-label='Add task' type='submit' icon={<AddIcon />} />
         </Flex>
-        <FormErrorMessage>{error}</FormErrorMessage>
+        <FormErrorMessage as='i' fontSize='md' fontWeight='medium'><Icon as={WarningIcon} mr='5px'></Icon> {error}</FormErrorMessage>
       </FormControl>
 
 
