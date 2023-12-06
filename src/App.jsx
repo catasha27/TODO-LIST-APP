@@ -34,7 +34,7 @@ function App() {
   return (
     <Flex minH='100vh' direction='column' alignItems='center' bgGradient='radial(#1700f8db, #1100B7, #08017d, #040041)' color='white' pb="5">
       <Header />
-      <VStack w='600px' >
+      <VStack w={{ base:'310px', sm:'450px', md:'600px'}} >
         <Form onSubmit={onSubmit} tasks={tasks}/>
         <Spacer />
         <TodoList tasks={tasks} deleteTask={deleteTask} toggle={toggle} />
