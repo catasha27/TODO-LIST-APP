@@ -8,6 +8,8 @@ This TODO LIST app allows you to add tasks, mark them as complete when they are 
 * ♥ **Sharime Cahuas** (https://github.com/catasha27)
 * ♥ **Corina Talledo** (https://github.com/CorinaTalledo)
 
+## 📸 Screenshot of Link being activated
+![link at footer being activated](./src/assets/screenshots/Footer%20Name-Links.gif)
 
 ## 💫 The technologies and frameworks used were:
 * → React (https://react.dev/)
